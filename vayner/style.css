@@ -1,0 +1,80 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.user-tables {
+
+  user-select: none;
+  font-size: 18px;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.user-single {
+  width: 418px;
+  max-height: 438px;
+
+  margin-bottom: 20px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.rows {
+  max-height: 405px;
+  width: 420px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.user-row:nth-of-type(odd) {
+  background:#1582c4;
+}
+
+.user-row {
+  width: 405px;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  background: #bc2949;
+
+  cursor: pointer;
+  transition: background 1s ease-in-out;
+}
+
+.row-id {
+  height: 30px;
+  width: 30px;
+
+  font-size: 20px;
+  line-height: 30px;
+
+  margin: 5px 5px;
+  color: white;
+  background: #333;
+  border-radius:15px;
+  text-align: center;
+}
+
+.row-title {
+  width: 360px;
+  margin: 2px 5px;
+  text-transform: uppercase;
+  color: white;
+}
