@@ -12,6 +12,15 @@ RSpec.describe ChocoPromo do
       expect(@promo.bonus).to be
     end
 
+    it 'initializes with correct promotions' do
+      expect(@promo.bonus['milk']).to eq(
+        {"milk"=>1, "sugar free"=>1}
+      )
+      expect(@promo.bonus['sugar free']).to eq(
+        {"dark"=>1, "sugar free"=>1}
+      )
+    end
+
     it 'has an array to store orders read from CSV' do
       expect(@promo.orders.class).to be(Array)
     end
@@ -58,6 +67,10 @@ RSpec.describe ChocoPromo do
       expect(purchase['white']).to equal(5)
       expect(purchase['sugar free']).to equal(3)
       expect(purchase['dark']).to equal(1)
+    end
+
+    it 'stores orders to the local variable @orders after reading file' do
+      expect(@promo.orders[0]).to eq([12, 2, 5, "milk"])
     end
   end
 

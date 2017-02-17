@@ -8,7 +8,7 @@ describe("idk", () => {
     ReactDOM.render(React.createElement(Storefront))
   });
 
-  it("renders a paragraph which greets someone", function() {
+  it("renders anything", function() {
     const renderer = ReactTestUtils.createRenderer();
     renderer.render(<Storefront />);
     const result = renderer.getRenderOutput();

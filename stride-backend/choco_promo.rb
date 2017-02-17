@@ -29,6 +29,19 @@ class ChocoPromo
     process_and_print_file
   end
 
+  def get_redemption(order)
+    candies = EMPTY_BASKET.clone
+    wrappers = EMPTY_BASKET.clone
+
+    candies[order[3]] = order[0]/order[1]
+    wrappers[order[3]] = candies[order[3]]
+
+    get_bonus(candies, wrappers, order[2])
+    candies
+  end
+
+  private
+
   def set_prices!(csv)
     cleaned = parse_file(csv)
     @orders = cleaned.select {|ar| ar[0].is_a?(Integer)}
@@ -47,19 +60,7 @@ class ChocoPromo
     cleaned_file
   end
 
-  def get_redemption(order)
-    candies = EMPTY_BASKET.clone
-    wrappers = EMPTY_BASKET.clone
-
-    candies[order[3]] = order[0]/order[1]
-    wrappers[order[3]] = candies[order[3]]
-
-    get_bonus(candies, wrappers, order[2])
-    candies
-  end
-
   def get_bonus(candies, wrappers, price)
-
     finished = false
     until finished
       finished = true
